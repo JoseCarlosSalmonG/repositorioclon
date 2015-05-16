@@ -1,6 +1,4 @@
-# ProyectoWebTI
-Proyecto Web TI  
+# Proyecto WebTI
 
-chipis
 
 Soluciones TI
