@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reservationdetails
+
   resources :reservations
 
   resources :locals
