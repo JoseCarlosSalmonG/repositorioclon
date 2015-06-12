@@ -1,0 +1,2 @@
+module ReservationdetailsHelper
+end
