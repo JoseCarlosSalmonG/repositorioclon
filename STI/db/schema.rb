@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612024854) do
+ActiveRecord::Schema.define(version: 20150612025518) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -62,6 +62,20 @@ ActiveRecord::Schema.define(version: 20150612024854) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "reservations", force: true do |t|
+    t.date     "date"
+    t.string   "address"
+    t.integer  "customer_id"
+    t.integer  "local_id"
+    t.integer  "payment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reservations", ["customer_id"], name: "index_reservations_on_customer_id", using: :btree
+  add_index "reservations", ["local_id"], name: "index_reservations_on_local_id", using: :btree
+  add_index "reservations", ["payment_id"], name: "index_reservations_on_payment_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
