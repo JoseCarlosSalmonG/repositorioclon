@@ -1,12 +1,6 @@
-# Proyecto WebTI
+# Proyecto Desarrollo Web
+Integrantes:
 
-demo
-Soluciones TI
-
-Actualizado!!!!!
-
-eder !!! 
-
-probando
-
-salio.
+Paucar Huillca, Raul
+Chuan Mendez, Eder
+Silva Benites, Julio
