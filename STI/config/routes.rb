@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :locals
+
+  resources :cities
+
   resources :payments
 
   resources :entrees
