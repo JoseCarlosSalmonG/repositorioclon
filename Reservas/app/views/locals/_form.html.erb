@@ -7,7 +7,7 @@
   <%= error_span(@local[:longitude]) %>
   <%= f.input :address %>
   <%= error_span(@local[:address]) %>
-  <%= f.input :city_id %>
+  <%= f.association :city %>
   <%= error_span(@local[:city_id]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
