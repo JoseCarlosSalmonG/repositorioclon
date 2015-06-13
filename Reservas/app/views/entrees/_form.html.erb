@@ -1,11 +1,12 @@
-<%= simple_form_for @entree, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @entree, :html => { :class => 'form-horizontal',multipart: true } do |f| %>
   <%= f.input :name %>
   <%= error_span(@entree[:name]) %>
   <%= f.input :price %>
   <%= error_span(@entree[:price]) %>
   <%= f.input :stock %>
   <%= error_span(@entree[:stock]) %>
-
+  <%= f.input :picture, as: :file %>
+  <%= error_span(@entree[:picture]) %>
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 entrees_path, :class => 'btn btn-default' %>

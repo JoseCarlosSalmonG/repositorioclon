@@ -69,6 +69,6 @@ class EntreesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entree_params
-      params.require(:entree).permit(:name, :price, :stock)
+      params.require(:entree).permit(:name, :price, :stock, :picture)
     end
 end
