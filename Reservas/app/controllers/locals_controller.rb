@@ -5,6 +5,10 @@ class LocalsController < ApplicationController
   # GET /locals.json
   def index
     @locals = Local.all
+    @hash = Gmaps4rails.build_markers(@locals) do |local, marker|
+      marker.lat local.latitude
+      marker.lng local.longitude
+    end
   end
 
   # GET /locals/1
