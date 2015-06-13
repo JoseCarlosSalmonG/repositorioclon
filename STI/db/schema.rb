@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20150612024854) do
+=======
 ActiveRecord::Schema.define(version: 20150612025518) do
+>>>>>>> d4befa6c0ecc1ced80f0c1841230a0597eb14200
+=======
+ActiveRecord::Schema.define(version: 20150612030243) do
+>>>>>>> 04c981c19c124ddf161cb62f870d4cc42b0e389a
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -62,6 +70,20 @@ ActiveRecord::Schema.define(version: 20150612025518) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "reservationdetails", force: true do |t|
+    t.integer  "quantityentree"
+    t.integer  "quantitycourse"
+    t.integer  "reservation_id"
+    t.integer  "entree_id"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reservationdetails", ["course_id"], name: "index_reservationdetails_on_course_id", using: :btree
+  add_index "reservationdetails", ["entree_id"], name: "index_reservationdetails_on_entree_id", using: :btree
+  add_index "reservationdetails", ["reservation_id"], name: "index_reservationdetails_on_reservation_id", using: :btree
 
   create_table "reservations", force: true do |t|
     t.date     "date"

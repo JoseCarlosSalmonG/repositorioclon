@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantityentree:</strong>
+  <%= @reservationdetail.quantityentree %>
+</p>
+
+<p>
+  <strong>Quantitycourse:</strong>
+  <%= @reservationdetail.quantitycourse %>
+</p>
+
+<p>
+  <strong>Reservation:</strong>
+  <%= @reservationdetail.reservation %>
+</p>
+
+<p>
+  <strong>Entree:</strong>
+  <%= @reservationdetail.entree %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @reservationdetail.course %>
+</p>
+
+<%= link_to 'Edit', edit_reservationdetail_path(@reservationdetail) %> |
+<%= link_to 'Back', reservationdetails_path %>

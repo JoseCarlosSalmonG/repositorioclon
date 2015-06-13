@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+  resources :reservationdetails
+
+>>>>>>> 04c981c19c124ddf161cb62f870d4cc42b0e389a
   resources :reservations
 
+>>>>>>> d4befa6c0ecc1ced80f0c1841230a0597eb14200
   resources :locals
 
   resources :cities
