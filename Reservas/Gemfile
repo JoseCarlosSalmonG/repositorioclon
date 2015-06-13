@@ -50,3 +50,4 @@ gem 'gmaps4rails'
 
 
 gem 'devise'
+gem 'rails_admin'
