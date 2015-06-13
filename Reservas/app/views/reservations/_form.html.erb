@@ -3,9 +3,9 @@
   <%= error_span(@reservation[:date]) %>
   <%= f.input :address %>
   <%= error_span(@reservation[:address]) %>
-  <%= f.input :local_id %>
+  <%= f.association :local%>
   <%= error_span(@reservation[:local_id]) %>
-  <%= f.input :payment_id %>
+  <%= f.association :payment %>
   <%= error_span(@reservation[:payment_id]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
