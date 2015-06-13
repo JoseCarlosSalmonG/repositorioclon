@@ -10,6 +10,8 @@
   <dd><%= @entree.price %></dd>
   <dt><strong><%= model_class.human_attribute_name(:stock) %>:</strong></dt>
   <dd><%= @entree.stock %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:picture) %>:</strong></dt>
+  <dd><%= image_tag @entree.picture.url(:medium) %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
