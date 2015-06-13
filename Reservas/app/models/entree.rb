@@ -1,5 +1,7 @@
 class Entree < ActiveRecord::Base
-    
+  validates :name, presence:true  
+  validates :price, presence:true  
+  validates :stock, presence:true  
   has_attached_file :picture,
  
                     styles:{medium:"300x300>",thumb: "100x100>"},

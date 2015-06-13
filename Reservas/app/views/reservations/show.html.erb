@@ -13,7 +13,7 @@
   <dt><strong><%= model_class.human_attribute_name(:payment_id) %>:</strong></dt>
   <dd><%= @reservation.payment_id %></dd>
 </dl>
-
+<%= link_to 'reservationdetails', reservation_reservationdetails_path(@reservation) %> 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               reservations_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),

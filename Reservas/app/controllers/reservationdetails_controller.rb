@@ -1,10 +1,10 @@
 class ReservationdetailsController < ApplicationController
   before_action :set_reservationdetail, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_reservation
   # GET /reservationdetails
   # GET /reservationdetails.json
   def index
-    @reservationdetails = Reservationdetail.all
+    @reservationdetails = @reservation.reservationdetails
   end
 
   # GET /reservationdetails/1
@@ -14,7 +14,7 @@ class ReservationdetailsController < ApplicationController
 
   # GET /reservationdetails/new
   def new
-    @reservationdetail = Reservationdetail.new
+    @reservationdetail = @reservation.reservationdetails.new
   end
 
   # GET /reservationdetails/1/edit
@@ -28,7 +28,7 @@ class ReservationdetailsController < ApplicationController
 
     respond_to do |format|
       if @reservationdetail.save
-        format.html { redirect_to @reservationdetail, notice: 'Reservationdetail was successfully created.' }
+        format.html { redirect_to reservation_reservationdetail_url(@reservation, @reservationdetail), notice: 'Reservationdetail was successfully created.' }
         format.json { render :show, status: :created, location: @reservationdetail }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ReservationdetailsController < ApplicationController
   def update
     respond_to do |format|
       if @reservationdetail.update(reservationdetail_params)
-        format.html { redirect_to @reservationdetail, notice: 'Reservationdetail was successfully updated.' }
+        format.html { redirect_to reservation_reservationdetail_url(@reservation, @reservationdetail), notice: 'Reservationdetail was successfully updated.' }
         format.json { render :show, status: :ok, location: @reservationdetail }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ReservationdetailsController < ApplicationController
   def destroy
     @reservationdetail.destroy
     respond_to do |format|
-      format.html { redirect_to reservationdetails_url, notice: 'Reservationdetail was successfully destroyed.' }
+      format.html { redirect_to reservation_reservationdetails_url(@reservation), notice: 'Reservationdetail was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -66,7 +66,9 @@ class ReservationdetailsController < ApplicationController
     def set_reservationdetail
       @reservationdetail = Reservationdetail.find(params[:id])
     end
-
+    def set_reservation
+      @reservation = Reservation.find(params[:reservation_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservationdetail_params
       params.require(:reservationdetail).permit(:quantityentree, :quantitycourse, :reservation_id, :entree_id, :course_id)

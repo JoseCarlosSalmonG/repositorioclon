@@ -1,0 +1,34 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Addres</th>
+      <th>Local</th>
+      <th>Payment</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @reservation %>  
+        <h2>Our Products </h2>
+        <% @reservation.each do |reservation| %>
+            <tr>
+                <td><%= link_to reservation.id, reservation_path(reservation) %></td>
+                <td><%= reservation.date %></td>
+                <td><%= reservation.address %></td>
+                <td><%= reservation.local.name %></td>
+                <td><%= reservation.payment.name %></td>
+                <td>
+                
+                
+                      </td>
+            </tr>
+        
+        <% end %>
+    <% end %>    
+  </tbody>        
+
+ 
+ 
+ </table>

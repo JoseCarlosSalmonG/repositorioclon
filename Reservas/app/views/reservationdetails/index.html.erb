@@ -1,33 +1,44 @@
-<h1>Listing reservationdetails</h1>
-
-<table>
+<%- model_class = Reservationdetail -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Quantityentree</th>
-      <th>Quantitycourse</th>
-      <th>Reservation</th>
-      <th>Entree</th>
-      <th>Course</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:quantityentree) %></th>
+      <th><%= model_class.human_attribute_name(:quantitycourse) %></th>
+      <th><%= model_class.human_attribute_name(:reservation_id) %></th>
+      <th><%= model_class.human_attribute_name(:entree_id) %></th>
+      <th><%= model_class.human_attribute_name(:course_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @reservationdetails.each do |reservationdetail| %>
       <tr>
+        <td><%= link_to reservationdetail.id, reservation_reservationdetail_path(@reservation,reservationdetail) %></td>
         <td><%= reservationdetail.quantityentree %></td>
         <td><%= reservationdetail.quantitycourse %></td>
-        <td><%= reservationdetail.reservation %></td>
-        <td><%= reservationdetail.entree %></td>
-        <td><%= reservationdetail.course %></td>
-        <td><%= link_to 'Show', reservationdetail %></td>
-        <td><%= link_to 'Edit', edit_reservationdetail_path(reservationdetail) %></td>
-        <td><%= link_to 'Destroy', reservationdetail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= reservationdetail.reservation_id %></td>
+        <td><%= reservationdetail.entree_id %></td>
+        <td><%= reservationdetail.course_id %></td>
+        <td><%=l reservationdetail.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_reservation_reservationdetail_path(@reservation,reservationdetail), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      reservation_reservationdetail_path(@reservation,reservationdetail),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Reservationdetail', new_reservationdetail_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_reservation_reservationdetail_path,
+            :class => 'btn btn-primary' %>

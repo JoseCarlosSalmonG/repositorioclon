@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :reservationdetails
+  get 'reportes/index'
 
-  resources :reservations
+  # resources :reservationdetails
+
+  # resources :reservations
 
   resources :courses
 
@@ -15,6 +17,11 @@ Rails.application.routes.draw do
 
   get 'home/index'
   root 'home#index'
+
+resources :reservations do
+  resources :reservationdetails
+end  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
