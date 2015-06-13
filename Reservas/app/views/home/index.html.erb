@@ -1,7 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Nombre de la Empresa</h1>
 
-
+<table>
+    <tr style="width:100%">
+        <td style="width:30%">
+            City : <%= collection_select(:city, :city_id, City.all, :id, :name) %>
+        </td >
+        <td style="width:5%">&nbsp;&nbsp;</td>
+        <td style="width:50%">
+            Locals : <%= collection_select(:locals, :local_id, Local.all, :id, :name) %>
+        </td>
+        <td>&nbsp;&nbsp;</td>
+    </tr>
+</table>
 
 <% if @course %>
     <h2>Our Products </h2>
