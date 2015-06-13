@@ -1,0 +1,33 @@
+<h1>Listing reservationdetails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantityentree</th>
+      <th>Quantitycourse</th>
+      <th>Reservation</th>
+      <th>Entree</th>
+      <th>Course</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservationdetails.each do |reservationdetail| %>
+      <tr>
+        <td><%= reservationdetail.quantityentree %></td>
+        <td><%= reservationdetail.quantitycourse %></td>
+        <td><%= reservationdetail.reservation %></td>
+        <td><%= reservationdetail.entree %></td>
+        <td><%= reservationdetail.course %></td>
+        <td><%= link_to 'Show', reservationdetail %></td>
+        <td><%= link_to 'Edit', edit_reservationdetail_path(reservationdetail) %></td>
+        <td><%= link_to 'Destroy', reservationdetail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reservationdetail', new_reservationdetail_path %>

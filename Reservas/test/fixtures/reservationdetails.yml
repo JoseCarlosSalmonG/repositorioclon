@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantityentree: 1
+  quantitycourse: 1
+  reservation_id: 
+  entree_id: 
+  course_id: 
+
+two:
+  quantityentree: 1
+  quantitycourse: 1
+  reservation_id: 
+  entree_id: 
+  course_id: 
