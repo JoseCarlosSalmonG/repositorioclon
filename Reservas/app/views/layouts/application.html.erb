@@ -50,8 +50,14 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Home", root_path  %></li>
             <li><%= link_to "reservations", reservations_path  %></li>
+            <% if user_signed_in? %>
             <li><%= link_to "courses", courses_path  %></li>
             <li><%= link_to "entrees", entrees_path  %></li>
+            <li><%= link_to "cities", cities_path  %></li>
+            <li><%= link_to "locals", locals_path  %></li>
+            <li><%= link_to 'cerrar session', destroy_user_session_path, method: :delete %></li>
+            <li><%= "usuario :" + current_user.email %></li>
+            <% end %>
           </ul>
         </div>
       </div>
