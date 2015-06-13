@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2015-06-13
+  address: MyString
+  local_id: 
+  payment_id: 
+
+two:
+  date: 2015-06-13
+  address: MyString
+  local_id: 
+  payment_id: 

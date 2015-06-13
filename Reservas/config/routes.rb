@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :reservations
+
+  resources :courses
+
+  resources :entrees
+
+  resources :payments
+
+  resources :locals
+
   resources :cities
 
   get 'home/index'
