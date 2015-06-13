@@ -1,2 +1,15 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+
+
+
+<% if @course %>
+    <h2>Our Products </h2>
+    <% @course.each do |course| %>
+        <h3><%= course.name %></h3>
+            <%= image_tag course.picture.url(:thumb) %>
+            <%= link_to course.name, course %>
+    <% end %>
+ <% end %>
+ 
+
