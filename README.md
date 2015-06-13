@@ -12,3 +12,5 @@ Silva Benites, Julio
    43  rake db:migrate                                                                                                                             
    44  rails g scaffold payments name:string                                                                                                       
    45  rake db:migrate 
+   
+   ocurrira algo
