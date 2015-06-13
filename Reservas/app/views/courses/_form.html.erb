@@ -1,13 +1,12 @@
-<%= simple_form_for(@course) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @course, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@course[:name]) %>
+  <%= f.input :price %>
+  <%= error_span(@course[:price]) %>
+  <%= f.input :stock %>
+  <%= error_span(@course[:stock]) %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :price %>
-    <%= f.input :stock %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                courses_path, :class => 'btn btn-default' %>
 <% end %>
